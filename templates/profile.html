@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>User Profile</title></head>
+<body>
+    <h2>Welcome, {{ session['user']['name'] }}</h2>
+
+    <form method="POST">
+        <label>Nickname:</label><br>
+        <input type="text" name="nickname" value="{{ profile.nickname or '' }}"><br>
+
+        <label>Address:</label><br>
+        <input type="text" name="address" value="{{ profile.address or '' }}"><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+
+    <p>Your email: {{ profile.email }}</p>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
